@@ -1,8 +1,8 @@
-import Dashboard from './dashboard/page';
+import Dashboard from "./dashboard/page";
 const HomePage = () => {
   return (
     <div>
-      <Dashboard/>
+      <Dashboard />
     </div>
   );
 };
