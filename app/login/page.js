@@ -35,7 +35,7 @@ export default function Login() {
               </div>
               <div className="flex items-center justify-between mt-8">
                 <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 w-full rounded-lg"
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 w-full rounded-lg"
                   type="submit"
                 >
                   Sign In
