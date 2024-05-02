@@ -14,12 +14,29 @@ export default function RegisterForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (!name || !email || !password) {
       setError("All fields are necessary.");
       return;
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Password validation (at least 8 characters long, containing at least one uppercase letter, one lowercase letter, and one number)
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+      );
+      return;
+    }
+    setError("");
     try {
       const resUserExists = await fetch("api/userExists", {
         method: "POST",
@@ -86,7 +103,7 @@ export default function RegisterForm() {
           </button>
 
           {error && (
-            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
+            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2 max-w-[400px]">
               {error}
             </div>
           )}
