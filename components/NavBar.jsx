@@ -5,7 +5,6 @@ export default function Profile() {
       <aside className="h-screen bg-white fixed lg:sticky top-0 border-r-2 p-6 pt-10 whitespace-nowrap z-10 closed shadow-xl ">
         <div className="mb-10 flex items-center justify-between ">
           <div className=" p-2 bg-green-500 text-white rounded">
-            <i data-feather="box"></i>
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -15,10 +14,6 @@ export default function Profile() {
               priority
             />
           </div>
-
-          <button className="lg:hidden bg-gray-200 text-gray-500 rounded leading-none p-1 btn-close-menu">
-            <i data-feather="chevron-left"></i>
-          </button>
         </div>
 
         <ul className="text-gray-500 font-semibold flex flex-col gap-2">
@@ -132,24 +127,6 @@ export default function Profile() {
                   priority
                 />
                 <span className="flex-grow">Marketing</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center rounded px-3 py-2 hover:text-black hover:bg-gray-50 transition-all"
-            >
-              <span className="flex items-center gap-3">
-                <Image
-                  src="/marketing.svg"
-                  alt="Vercel Logo"
-                  className="invert"
-                  width={20}
-                  height={20}
-                  priority
-                />
-                <span className="flex-grow">Logout</span>
               </span>
             </a>
           </li>
