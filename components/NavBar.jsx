@@ -4,7 +4,7 @@ export default function Profile() {
     <>
       <aside className="h-screen bg-white fixed lg:sticky top-0 border-r-2 p-6 pt-10 whitespace-nowrap z-10 closed shadow-xl ">
         <div className="mb-10 flex items-center justify-between ">
-          <div className=" p-2 bg-blue-600 text-white rounded">
+          <div className=" p-2 bg-green-500 text-white rounded">
             <i data-feather="box"></i>
             <Image
               src="/vercel.svg"
