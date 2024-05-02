@@ -3,7 +3,7 @@
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-
+import SkeletonLoader from "@/components/SkeletonLoader";
 export default function UserInfo() {
   const { data: session } = useSession();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -15,22 +15,24 @@ export default function UserInfo() {
   return (
     <>
       <div>
-        <div
-          onClick={handleDropdown}
-          className="flex gap-2 hover:cursor-pointer items-center "
-        >
-          {session && (
+        {!session && <SkeletonLoader />}
+        {session && (
+          <div
+            onClick={handleDropdown}
+            className="flex gap-2 hover:cursor-pointer items-center "
+          >
             <div className="bg-gray-800 text-white h-10 w-10 flex items-center justify-center rounded-full">
               {session?.user?.name
                 ? session.user.name.substring(0, 2).toUpperCase()
                 : ""}
             </div>
-          )}
-          <div className="leading-3">
-            <p className="">{session?.user?.name}</p>
-            <p className="pt-1.5">{session?.user?.email}</p>
+            <div className="leading-3">
+              <p className="">{session?.user?.name}</p>
+              <p className="pt-1.5">{session?.user?.email}</p>
+            </div>
           </div>
-        </div>
+        )}
+
         {session && isDropdownOpen && (
           <div className="relative">
             <div
