@@ -129,7 +129,7 @@ export default function Dashboard() {
             <UserInfo />
           </header>
 
-          <div className="px-10 py-8">
+          <div className="px-10 pt-3 pb-10">
             <div className="flex justify-end pb-3">
               <select
                 name="interval"
