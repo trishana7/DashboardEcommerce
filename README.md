@@ -17,7 +17,7 @@ To run the project, follow these steps:
 2. Navigate into the project directory using the `cd` command:
 
    ```shell
-   cd trishana-rai-nextjs
+   cd <folder-name>
    ```
 
 3. Install the project dependencies by running the following command:
